@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather app</title>    
+    <link href="/css/styles.css" rel="stylesheet">
+ 
+</head>
+<body>
+    <div class="main-content">
+        {{>header}}
+
+        <form id="weather-form">
+            <p>Use this site to check your weather!</p>
+            <input type='text' placeholder="Location" id="location" required>
+            <button type="submit">Search</button>
+            <br>
+            <p id="weather_report"></p>
+        </form>
+    </div>
+    {{>footer}}
+    <script src='/js/indx.js'></script> <!-- Required to access de doc loaded-->
+</body>
+</html>
