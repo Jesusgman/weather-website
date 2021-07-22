@@ -8,6 +8,7 @@ const publicPath = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname,'../templates/views');
 const partialsPath = path.join(__dirname,'../templates/partials');
 const app = express();
+const port = process.env.PORT || 3000;
 
 //Views engine and directory config
 app.set('view engine','hbs')
@@ -68,13 +69,7 @@ app.get('/weather',(req,res)=>{
                 ApparentTemp: tempAprnt
             })
         });
-
     });
-/*     res.send({
-        weather: 'Sunny',
-        location: 'Guadalajara',
-        address: address
-    }); */
 });
 
 app.get('/products',(req,res)=>{
@@ -111,7 +106,7 @@ app.get('*', (req,res) => {
 })
 
 app.listen({
-    port: 3000
+    port
 }, ()=>{
-    console.log('Server is up')
+    console.log(`Server is up at ${port}`)
 });
