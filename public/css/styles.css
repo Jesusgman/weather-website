@@ -49,6 +49,14 @@ header a:hover{
     visibility: hidden;
 }
 
+#weather-icon {
+    visibility: hidden;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
 input {
     border: 1px solid #cccccc;
     padding: 4px;

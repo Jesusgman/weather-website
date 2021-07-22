@@ -56,17 +56,21 @@ app.get('/weather',(req,res)=>{
         if (error){
             return res.send({ error });
         }
-        forecast(latitude,longitude,(error,{temp, tempAprnt, wCode}={})=>{
+        forecast(latitude,longitude,(error,{temp, tempAprnt, wCode, iconCode}={})=>{
             if(error){
                 return res.send({ error });
             }
             //Remember about shorthand sintax
+            let d = new Date();
+            let timeOfDay = d.getHours() < 18 && d.getHours() > 6 ? 'Day' : 'Night';
             res.send({
                 forecastData: `It's currently ${temp} degrees out on ${location}. It feels like ${tempAprnt}, expect a ${wCode} weather`,
                 weather: wCode,
                 location,
                 temperaure: temp,
-                ApparentTemp: tempAprnt
+                ApparentTemp: tempAprnt,
+                iconCode,
+                timeOfDay
             })
         });
     });

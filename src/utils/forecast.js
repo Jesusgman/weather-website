@@ -36,7 +36,8 @@ const forecast = (latitude, longitude, cb) => {
             cb(undefined,{
                 temp: temperature,
                 tempAprnt: temperatureApparent,
-                wCode: weatherCode[wCode]
+                wCode: weatherCode[wCode],
+                iconCode: wCode
             })
         }
     })
